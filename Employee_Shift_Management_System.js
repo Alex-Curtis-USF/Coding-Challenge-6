@@ -6,3 +6,16 @@ let employees = [
     { name: 'Jill', shifts: [{ day: 'Wednesday', hours: 8}, { day: 'Friday', hours: 7}]},
     { name: 'Natalie', shifts: [{ day: 'Monday', hours: 5}, { day: 'Tuesday', hours: 6}, { day: 'Wednesday', hours: 5}]}
 ];
+
+// Create a Function to Display Employee Shift Details
+
+function displayEmployeeShifts(employee) {
+    console.log(`Employee Name: ${employee.name}`);
+    employee.shifts.forEach((test)=> {
+        console.log(test);
+    })
+}
+
+
+
+displayEmployeeShifts(employees[0])

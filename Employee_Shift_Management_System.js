@@ -12,8 +12,7 @@ let employees = [
 function displayEmployeeShifts(employee) {
     console.log(`Employee Name: ${employee.name}`);
     employee.shifts.forEach((test)=> {
-        console.log(test);
-    })
+        console.log(test);})
 }
 
 displayEmployeeShifts(employees[0]);
@@ -32,6 +31,7 @@ function assignShift(employeeName, day, hours) {
     employee.shifts.push({ day, hours });
     console.log(`${employeeName} was assigned a ${hours} hour long shift on ${day}.`);
 }
+
 assignShift('Bill', 'Wednesday', 6);
 
 // Create a Function to Calculate Total Hours Worked
@@ -43,3 +43,19 @@ function calculateTotalHours(employeeName) {
 }
 
 console.log(`Bill's total for the week: ${calculateTotalHours('Bill')} hours`);
+
+// Create a Function to List Employees with Free Days
+
+function listAvailableEmployees(day) {
+    
+    employees.forEach(employee => {
+        let isAvailable = true;
+        employee.shifts.forEach(shift => {
+        if (shift.day === day) {
+            isAvailable = false;}});
+        if (isAvailable) {
+    console.log(`Employees available on ${day}:`);
+    console.log(employee.name);}});
+}
+
+listAvailableEmployees('Monday');
